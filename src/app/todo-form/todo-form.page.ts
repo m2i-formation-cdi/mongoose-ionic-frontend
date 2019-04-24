@@ -22,6 +22,7 @@ export class TodoFormPage implements OnInit {
   persistTask(){
     this.httpClient.post("http://localhost:3000/task/new", this.task).subscribe(
       ()=>{
+        console.log(this.task);
         console.log("ok");
       },
       (err)=> {
