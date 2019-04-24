@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo-form',
@@ -14,7 +15,7 @@ export class TodoFormPage implements OnInit {
     done: false
   }
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient, private router: Router) { }
 
   ngOnInit() {
   }
@@ -24,6 +25,7 @@ export class TodoFormPage implements OnInit {
       ()=>{
         console.log(this.task);
         console.log("ok");
+        this.router.navigateByUrl('/home');
       },
       (err)=> {
         console.log(err);
