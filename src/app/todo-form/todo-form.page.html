@@ -8,15 +8,15 @@
   <ion-list>
     <ion-item>
       <ion-label position="floating">Tâche</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="task.taskName"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating">Date</ion-label>
-        <ion-datetime></ion-datetime>
+        <ion-datetime [(ngModel)]="task.dateString"></ion-datetime>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
-  <ion-button expand="block">Valider</ion-button>
+  <ion-button expand="block" (click)="persistTask()">Valider</ion-button>
 </ion-footer>
