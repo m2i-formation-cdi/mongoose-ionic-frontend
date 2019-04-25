@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,13 @@ export class HomePage {
 
   public taskList = [];
 
-  constructor(private httpClient:HttpClient){
+  public user;
+
+  constructor(
+    private httpClient:HttpClient, 
+    private userService:UserService){
+
+      this.user = userService.getUser();
 
   }
 

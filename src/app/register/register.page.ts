@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +16,10 @@ export class RegisterPage implements OnInit {
     login: ''
   }
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(
+    private httpClient:HttpClient, 
+    private user:UserService,
+    private router:Router) { }
 
   ngOnInit() {
   }
@@ -32,8 +37,10 @@ export class RegisterPage implements OnInit {
     if(this.isFormValid()){
       this.httpClient.post('http://localhost:3000/register', this.userInput)
       .subscribe(
-        (data)=>{
-          console.log(data);
+        (response:any)=>{
+          console.log(response);
+          this.user.setUser(response.data);
+          this.router.navigateByUrl('/home');
         },
         err => console.log(err)
       )
