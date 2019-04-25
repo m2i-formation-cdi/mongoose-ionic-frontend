@@ -16,6 +16,11 @@ export class AppComponent {
       icon: 'home'
     },
     {
+      title: 'Inscription',
+      url: '/register',
+      icon: 'home'
+    },
+    {
       title: 'Home',
       url: '/home',
       icon: 'home'

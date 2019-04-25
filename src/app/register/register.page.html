@@ -6,23 +6,23 @@
   <ion-list>
     <ion-item>
       <ion-label position="floating">Identifiant</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="userInput.login"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Mot de passe</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="userInput.password"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Nom</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="userInput.userName"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar> 
-    <ion-button expand="block"> 
-      Connexion 
+    <ion-button expand="block" (click)="validateForm()"> 
+      Valider 
     </ion-button> 
   </ion-toolbar>
 </ion-footer>
