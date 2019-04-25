@@ -25,4 +25,22 @@ export class HomePage {
     );
   }
 
+  deleteTask(id){
+    this.httpClient.delete("http://localhost:3000/task/"+id)
+    .subscribe(
+      ()=>{
+        this.ionViewDidEnter();
+      },
+      err => console.log(err)
+    );
+  }
+
+  updateTask(task){
+    this.httpClient.put("http://localhost:3000/task", task)
+    .subscribe(
+      ()=> console.log("update ok"),
+      (err) => console.log(err)
+    );
+  }
+
 }
