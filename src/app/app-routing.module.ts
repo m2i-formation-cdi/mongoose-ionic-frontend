@@ -15,7 +15,9 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-  { path: 'todo-form', loadChildren: './todo-form/todo-form.module#TodoFormPageModule' }
+  { path: 'todo-form', loadChildren: './todo-form/todo-form.module#TodoFormPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './register/register.module#RegisterPageModule' }
 ];
 
 @NgModule({
