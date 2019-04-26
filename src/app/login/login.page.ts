@@ -31,8 +31,9 @@ export class LoginPage implements OnInit {
     this.httpClient.post('http://localhost:3000/login', this.loginInfo)
     .subscribe(
       (response:any)=>{
-        if(response.found){
-          this.userService.setUser(response.data);
+        console.log(response);
+        if(response.success){
+          this.userService.setUser(response.user);
           this.router.navigateByUrl('/home');
         } else {
           let myToast = this.toastCtrl.create(
